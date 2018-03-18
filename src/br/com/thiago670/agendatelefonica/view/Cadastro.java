@@ -40,7 +40,7 @@ public class Cadastro extends Pessoa {
 	public static void getCadastros() {
 		System.out.println("\n----------------------\nUSUARIOS CADASTRADOS\n");
 		pessoas.forEach(c -> {
-			System.out.println("Nome: " + c.getNome() + "\nCPF: " + c.getCpf() + "\nTelefone: "
+			System.out.println("Nome: " + c.getNome() + "\nCPF: " + Util.fixCpf(c.getCpf()) + "\nTelefone: "
 					+ Util.fixTelefone(c.getTelefone()) + "\nE-mail: " + c.getEmail() + "\n\n");
 		});
 	}
