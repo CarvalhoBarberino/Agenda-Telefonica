@@ -19,27 +19,25 @@ public class Util {
 	 * Retorna o n�mero de telefone no padr�o (xx)xxxx-xxxx
 	 */
 	public static String fixTelefone(String telefone) {
-
 		String ddd="";
 		String prefixo="";
 		String sufixo="";
-		
-		//identifica se � celular ou residencial xx x xxxxxxxx
-		
-		if(telefone.length()==11) {
-			ddd = telefone.substring(0, 2);
-			prefixo = telefone.substring(2, 7);
-			sufixo = telefone.substring(7, 11);
-		}else {
-			ddd = telefone.substring(0, 2);
-			prefixo = telefone.substring(2, 7);
-			sufixo = telefone.substring(7, 10);
-		}
-
-
+		ddd = telefone.substring(0, 2);
+		prefixo = telefone.substring(2, telefone.length() - 4);
+		sufixo = telefone.substring(telefone.length() - 4, telefone.length());
 		telefone = "(" + ddd + ")" + prefixo + "-" + sufixo;
 		return telefone;
-
 	}
-
+	public static String fixCpf(String cpf){
+		String parte1 = "";
+		String parte2 = "";
+		String parte3 = "";
+		String digito = "";
+		parte1 = cpf.substring(0, 3);
+		parte2 = cpf.substring(3, 6);
+		parte3 = cpf.substring(6, 9);
+		digito = cpf.substring(9, 11);
+		cpf = parte1 + "." + parte2 + "." + parte3 + "-" + digito;
+		return cpf;
+	}
 }
