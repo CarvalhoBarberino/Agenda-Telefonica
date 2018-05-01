@@ -1,6 +1,8 @@
 package br.com.thiago670.agendatelefonica.model;
 
-public class Pessoa {
+import java.io.Serializable;
+
+public class Pessoa implements Serializable{
 	
 	private String cpf;
 	private String nome;

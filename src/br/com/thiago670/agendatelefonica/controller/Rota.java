@@ -56,6 +56,7 @@ public class Rota extends Cadastro {
 			break;
 		case 6: // Sa�da
 			System.out.println("Até logo!");
+			Cadastro.salvarParaSair();
 			System.exit(0);
 
 		default:

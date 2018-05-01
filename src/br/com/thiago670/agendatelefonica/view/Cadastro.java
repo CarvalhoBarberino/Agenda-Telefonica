@@ -1,5 +1,9 @@
 package br.com.thiago670.agendatelefonica.view;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,7 +14,7 @@ import br.com.thiago670.agendatelefonica.util.Util;
 
 public class Cadastro extends Pessoa {
 
-	private static List<Pessoa> pessoas = new ArrayList<>();
+	private static List<Pessoa> pessoas = null;
 	private static Pessoa pessoa = null;
 
 	public static void setCadastro() {
@@ -73,5 +77,12 @@ public class Cadastro extends Pessoa {
 		String cpf=Teclado.read();
 		pessoas.removeIf(u->u.getCpf().equals(cpf));
 	}
-
+	
+	public static void carregarDadosDoArquivo(){
+		pessoas = Util.extrairObjetoDoArquivo();
+	}
+	
+	public static void salvarParaSair(){
+		Util.gravarObjetoNoArquivo(pessoas);
+	}
 }
