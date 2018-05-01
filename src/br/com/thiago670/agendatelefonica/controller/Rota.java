@@ -1,7 +1,5 @@
 package br.com.thiago670.agendatelefonica.controller;
 
-import java.io.IOException;
-
 import br.com.thiago670.agendatelefonica.model.Teclado;
 import br.com.thiago670.agendatelefonica.util.Util;
 import br.com.thiago670.agendatelefonica.view.Cadastro;

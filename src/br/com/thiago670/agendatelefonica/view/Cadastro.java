@@ -1,10 +1,5 @@
 package br.com.thiago670.agendatelefonica.view;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,8 +10,6 @@ import br.com.thiago670.agendatelefonica.util.Util;
 public class Cadastro extends Pessoa {
 
 	private static List<Pessoa> pessoas = null;
-	private static Pessoa pessoa = null;
-
 	public static void setCadastro() {
 
 		System.out.println("\n----------------------\nCADASTRO DE CLIENTES\n");
